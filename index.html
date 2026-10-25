@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eee5">
+  <meta name="description" content="İstanbul'da yaşayan bağımsız tasarımcı ve front-end geliştirici İlkim Önercan'ın portfolyosu. Kültürel arşivler, editoryal siteler ve sakin arayüzler.">
+  <meta property="og:title" content="İlkim Önercan — Tasarımcı & Front-end Geliştirici">
+  <meta property="og:description" content="Kültürel arşivler, bağımsız yayınlar ve insanı yormayan arayüzler. İstanbul'dan, ekranınızın öbür ucuna.">
+  <meta property="og:type" content="website">
+  <title>İlkim Önercan — Tasarımcı & Front-end Geliştirici</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%B6%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    :root {
+      --paper: #f3eee5;
+      --paper-2: #e9e2d6;
+      --paper-3: #ded5c7;
+      --ink: #161411;
+      --ink-2: #29241f;
+      --muted: #625b52;
+      --line: rgba(22, 20, 17, 0.16);
+      --line-strong: rgba(22, 20, 17, 0.34);
+      --brand: #b83a22;
+      --brand-deep: #7e2412;
+      --brand-tint: #efd7cf;
+      --brand-light: #eaa28f;
+      --paper-on-ink: #f4efe6;
+      --font-display: "Sora", sans-serif;
+      --font-body: "Source Sans 3", sans-serif;
+      --container: 1320px;
+      --gutter: clamp(1rem, 3.6vw, 3.5rem);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+      scrollbar-color: var(--brand) var(--paper);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 82% -8%, rgba(184, 58, 34, 0.07), transparent 38rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      mix-blend-mode: multiply;
+    }
+
+    ::selection {
+      color: var(--paper);
+      background: var(--brand);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      text-wrap: balance;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - (2 * var(--gutter))), var(--container));
+      margin-inline: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      padding: 0.75rem 1rem;
+      color: var(--paper);
+      background: var(--ink);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.15rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 22px;
+      height: 1px;
+      background: var(--brand);
+    }
+
+    .section {
+      padding-block: clamp(4.6rem, 10vw, 8.5rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(17rem, 0.9fr);
+      gap: 1.3rem clamp(2rem, 6vw, 6rem);
+      align-items: end;
+      margin-bottom: clamp(2.7rem, 5.4vw, 4.8rem);
+    }
+
+    .section-head .kicker {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
+
+    .section-head h2 {
+      max-width: 15ch;
+      font-size: clamp(2.25rem, 4.35vw, 4.55rem);
+      letter-spacing: -0.055em;
+      line-height: 1.02;
+    }
+
+    .section-note {
+      max-width: 42ch;
+      padding-bottom: 0.35rem;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.62;
+    }
+
+    .brand {
+      position: relative;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: inherit;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid var(--ink);
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.32rem;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 0.91rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-role {
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.09em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 238, 229, 0.88);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.1rem, 2.2vw, 2rem);
+    }
+
+    .nav-link {
+      position: relative;
+      padding-block: 0.4rem;
+      font-size: 0.86rem;
+      text-decoration: none;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.62rem 0.85rem;
+      border: 1px solid var(--line-strong);
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      color: var(--paper);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .menu-toggle {
+      position: relative;
+      z-index: 4;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 12px 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-toggle span:not(.sr-only) {
+      display: block;
+      width: 21px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.28s var(--ease);
+    }
+
+    .menu-toggle.is-open span:first-child {
+      transform: translateY(3.75px) rotate(45deg);
+    }
+
+    .menu-toggle.is-open span:nth-child(2) {
+      transform: translateY(-3.75px) rotate(-45deg);
+    }
+
+    .hero {
+      position: relative;
+      padding-top: clamp(2.2rem, 5vw, 4.5rem);
+      padding-bottom: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: clamp(2rem, 4.8vw, 4.2rem);
+      padding-bottom: 0.95rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-top .kicker {
+      margin-bottom: 0;
+    }
+
+    .hero-coords {
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .hero-coords .slash {
+      margin-inline: 0.35rem;
+      color: var(--line-strong);
+    }
+
+    .hero-title {
+      max-width: 100%;
+      margin-bottom: clamp(2.8rem, 6vw, 5.6rem);
+      font-size: clamp(2.58rem, 8vw, 7.8rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.93;
+    }
+
+    .hero-title .line {
+      display: block;
+      padding-right: 0.04em;
+    }
+
+    .hero-title .line + .line {
+      margin-top: -0.02em;
+    }
+
+    .hero-title .line--indent {
+      padding-left: clamp(0.9rem, 8vw, 7rem);
+    }
+
+    .marked {
+      position: relative;
+      display: inline-block;
+      color: var(--brand);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .scribble {
+      position: absolute;
+      bottom: -0.05em;
+      left: -1%;
+      width: 102%;
+      height: 0.2em;
+      overflow: visible;
+    }
+
+    .scribble path {
+      fill: none;
+      stroke: var(--brand);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+    }
+
+    .js .scribble path {
+      stroke-dashoffset: 1;
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(11rem, 0.72fr) minmax(0, 1fr);
+      gap: clamp(1.8rem, 4.5vw, 5rem);
+      align-items: start;
+      padding-bottom: clamp(2.6rem, 5vw, 4.5rem);
+    }
+
+    .hero-lead {
+      max-width: 32ch;
+      color: var(--ink-2);
+      font-size: clamp(1.14rem, 1.5vw, 1.35rem);
+      line-height: 1.58;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 0.8rem 0.7rem 1.2rem;
+      color: var(--paper);
+      background: var(--brand);
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: background 0.25s ease;
+    }
+
+    .btn:hover {
+      background: var(--brand-deep);
+    }
+
+    .btn-arrow {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      border: 1px solid rgba(243, 238, 229, 0.35);
+      border-radius: 50%;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateY(3px);
+    }
+
+    .quiet-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid var(--line-strong);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .quiet-link:hover {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .quiet-link span {
+      transition: transform 0.25s var(--ease);
+    }
+
+    .quiet-link:hover span {
+      transform: translate(2px, -2px);
+    }
+
+    .availability {
+      max-width: 39ch;
+      padding-left: clamp(1rem, 2.4vw, 1.8rem);
+      border-left: 1px solid var(--line-strong);
+    }
+
+    .availability .kicker {
+      gap: 0.55rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .availability .kicker::before {
+      display: none;
+    }
+
+    .status-dot {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .availability p:last-child {
+      color: var(--ink-2);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .availability strong {
+      font-weight: 600;
+    }
+
+    .hero-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    .scroll-line {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .scroll-cue svg {
+      width: 13px;
+      height: 13px;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .scroll-cue:hover svg {
+      transform: translateY(3px);
+    }
+
+    .hero-index span {
+      margin-inline: 0.3rem;
+      color: var(--line-strong);
+    }
+
+    .work-list {
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .work-row {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-trigger {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: clamp(0.7rem, 2vw, 1.5rem);
+      margin: 0;
+      padding: clamp(1.4rem, 3vw, 2.1rem) 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition: padding 0.3s var(--ease);
+    }
+
+    .work-index {
+      padding-top: 0.4rem;
+      color: var(--brand);
+      font-family: var(--font-display);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    .work-body {
+      display: block;
+    }
+
+    .work-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .work-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.6vw, 2.15rem);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+      transition: color 0.22s ease;
+    }
+
+    .work-arrow {
+      display: grid;
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      transition: color 0.24s ease, background 0.24s ease, border-color 0.24s ease, transform 0.24s var(--ease);
+    }
+
+    .work-trigger:hover .work-title,
+    .work-trigger:focus-visible .work-title {
+      color: var(--brand);
+    }
+
+    .work-trigger:hover .work-arrow,
+    .work-trigger:focus-visible .work-arrow {
+      color: var(--paper);
+      background: var(--brand);
+      border-color: var(--brand);
+      transform: translate(2px, -2px);
+    }
+
+    .work-desc {
+      display: block;
+      max-width: 57ch;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+      line-height: 1.55;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.2rem;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2.5rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .about-poster {
+      position: sticky;
+      top: 112px;
+      isolation: isolate;
+      display: flex;
+      aspect-ratio: 4 / 5;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: clamp(1.3rem, 2.4vw, 2rem);
+      color: var(--paper-on-ink);
+      background-color: var(--ink);
+      background-image:
+        linear-gradient(rgba(244, 239, 230, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 239, 230, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .about-poster::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 22%;
+      right: -25%;
+      width: 68%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .about-poster::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      inset: 14px;
+      border: 1px solid rgba(244, 239, 230, 0.17);
+      pointer-events: none;
+    }
+
+    .poster-top,
+    .poster-foot {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .poster-top span:last-child,
+    .poster-foot span:last-child {
+      text-align: right;
+    }
+
+    .poster-center {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .poster-initials {
+      padding-right: 0.1em;
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 13vw, 11rem);
+      font-weight: 600;
+      letter-spacing: -0.14em;
+      line-height: 0.74;
+    }
+
+    .poster-line {
+      margin-top: 1.25rem;
+      color: rgba(244, 239, 230, 0.68);
+      font-family: var(--font-display);
+      font-size: 0.56rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .about-copy .kicker {
+      margin-bottom: 1.35rem;
+    }
+
+    .about-copy h2 {
+      max-width: 18ch;
+      margin-bottom: clamp(1.7rem, 3vw, 2.5rem);
+      font-size: clamp(2.15rem, 3.8vw, 3.9rem);
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+    }
+
+    .about-text {
+      max-width: 61ch;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 1.07rem;
+      line-height: 1.67;
+    }
+
+    .about-text p + p {
+      margin-top: 1rem;
+    }
+
+    .about-text p:first-child {
+      color: var(--ink-2);
+      font-size: 1.2rem;
+      line-height: 1.58;
+    }
+
+    .about-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .about-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 2rem;
+      margin-top: 1.8rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .social-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-inline:hover {
+      color: var(--brand);
+    }
+
+    .social-inline span {
+      transition: transform 0.25s var(--ease);
+    }
+
+    .social-inline:hover span {
+      transform: translate(2px, -2px);
+    }
+
+    .now {
+      margin-top: clamp(2rem, 4vw, 3.3rem);
+      padding: clamp(1.2rem, 2.5vw, 1.8rem);
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .now-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .now-head span:last-child {
+      color: var(--brand);
+    }
+
+    .now-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .now-list li {
+      display: grid;
+      grid-template-columns: 1.7rem minmax(0, 1fr);
+      gap: 0.7rem;
+      padding: 0.78rem 0;
+      border-top: 1px solid var(--line);
+      color: var(--ink-2);
+      font-size: 0.97rem;
+      line-height: 1.52;
+    }
+
+    .now-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .now-list li:last-child {
+      padding-bottom: 0;
+    }
+
+    .now-list span {
+      padding-top: 0.12rem;
+      color: var(--brand);
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      letter-spacing: 0.09em;
+    }
+
+    .services {
+      position: relative;
+      overflow: hidden;
+      border-top: 0;
+      color: var(--paper-on-ink);
+      background: var(--ink);
+    }
+
+    .services::before {
+      content: "";
+      position: absolute;
+      top: -20rem;
+      right: -8rem;
+      width: 44rem;
+      height: 44rem;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(184, 58, 34, 0.22), transparent 68%);
+    }
+
+    .services .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .services .kicker {
+      color: rgba(244, 239, 230, 0.56);
+    }
+
+    .services .kicker::before {
+      background: var(--brand-light);
+    }
+
+    .services .section-note {
+      color: rgba(244, 239, 230, 0.64);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid rgba(244, 239, 230, 0.2);
+    }
+
+    .service-card {
+      padding: clamp(1.6rem, 3.2vw, 2.65rem) clamp(1rem, 2.5vw, 2.4rem);
+      border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .service-card:nth-child(odd) {
+      padding-left: 0;
+      border-right: 1px solid rgba(244, 239, 230, 0.2);
+    }
+
+    .service-card:nth-child(even) {
+      padding-right: 0;
+    }
+
+    .service-card:hover {
+      background: rgba(244, 239, 230, 0.035);
+    }
+
+    .service-num {
+      color: var(--brand-light);
+      font-family: var(--font-display);
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+    }
+
+    .service-card h3 {
+      margin: 1.45rem 0 0.75rem;
+      font-size: clamp(1.35rem, 2.1vw, 1.82rem);
+      letter-spacing: -0.035em;
+      line-height: 1.18;
+    }
+
+    .service-card > p:not(.service-tags) {
+      max-width: 43ch;
+      color: rgba(244, 239, 230, 0.67);
+      font-size: 1rem;
+      line-height: 1.62;
+    }
+
+    .service-tags {
+      margin-top: 1.3rem;
+      color: rgba(244, 239, 230, 0.4);
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .services :focus-visible {
+      outline-color: var(--brand-light);
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.6rem, 3vw, 2.8rem);
+      align-items: start;
+    }
+
+    .note {
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .note:nth-child(2) {
+      margin-top: clamp(1rem, 4.5vw, 4.5rem);
+    }
+
+    .note-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.61rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .note h3 {
+      max-width: 20ch;
+      margin: 1.35rem 0 0.85rem;
+      font-size: clamp(1.18rem, 1.85vw, 1.5rem);
+      letter-spacing: -0.035em;
+      line-height: 1.25;
+    }
+
+    .note p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .contact {
+      border-top: 1px solid var(--line);
+      padding-bottom: clamp(3.6rem, 7vw, 6rem);
+    }
+
+    .contact-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: clamp(2rem, 4.5vw, 3.5rem);
+    }
+
+    .contact-head .kicker {
+      margin-bottom: 0;
+    }
+
+    .contact-local {
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact h2 {
+      max-width: 11ch;
+      margin-bottom: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(3.1rem, 8.7vw, 8.5rem);
+      font-weight: 500;
+      letter-spacing: -0.072em;
+      line-height: 0.9;
+    }
+
+    .contact h2 span {
+      color: var(--brand);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.65fr);
+      gap: clamp(2.2rem, 7vw, 7rem);
+      align-items: end;
+      padding-bottom: clamp(2.2rem, 5vw, 3.6rem);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-copy > p {
+      max-width: 45ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .email-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    .email-link {
+      padding-bottom: 0.16em;
+      border-bottom: 1px solid var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(1.12rem, 2.5vw, 2rem);
+      letter-spacing: -0.045em;
+      line-height: 1.3;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .email-link:hover {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .copy-btn {
+      min-height: 42px;
+      padding: 0.55rem 0.8rem;
+      border: 1px solid var(--line-strong);
+      background: transparent;
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .copy-btn:hover,
+    .copy-btn.is-copied {
+      color: var(--paper);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--brand);
+    }
+
+    .contact-link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .contact-link-text span {
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact-link-text strong {
+      font-size: 0.99rem;
+      font-weight: 400;
+    }
+
+    .contact-link-arrow {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    .contact-availability {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .contact-availability .status-dot {
+      margin-top: 0.45rem;
+    }
+
+    .contact-foot {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem 2rem;
+      padding-top: 1.1rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .contact-foot span:nth-child(2) {
+      text-align: center;
+    }
+
+    .contact-foot span:last-child {
+      text-align: right;
+    }
+
+    .site-footer {
+      padding: 2.4rem 0 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 2.2rem;
+    }
+
+    .footer-name {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .footer-name span {
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.4rem;
+      max-width: 34rem;
+      font-size: 0.78rem;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: var(--brand);
+    }
+
+    .back-top {
+      flex: 0 0 auto;
+      padding-bottom: 0.12rem;
+      border-bottom: 1px solid var(--line-strong);
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .back-top span {
+      display: inline-block;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .back-top:hover span {
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      gap: 1rem 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+
+    .footer-bottom span:nth-child(2) {
+      text-align: center;
+    }
+
+    .footer-bottom span:last-child {
+      text-align: right;
+    }
+
+    .fiction-note {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1.3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+      padding: 1.05rem 1.15rem;
+      border-left: 3px solid var(--brand);
+      color: var(--brand-deep);
+      background: var(--brand-tint);
+    }
+
+    .fiction-note-label {
+      padding-top: 0.15rem;
+      font-family: var(--font-display);
+      font-size: 0.59rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .fiction-note p:last-child {
+      max-width: 105ch;
+      font-size: 0.78rem;
+      line-height: 1.65;
+    }
+
+    .project-dialog {
+      width: min(760px, calc(100% - 2rem));
+      max-height: min(88vh, 860px);
+      padding: 0;
+      border: 0;
+      color: var(--ink);
+      background: var(--paper);
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+
+    .project-dialog::backdrop {
+      background: rgba(22, 20, 17, 0.68);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+
+    .dialog-inner {
+      position: relative;
+      padding: clamp(2rem, 5vw, 3.7rem);
+    }
+
+    .dialog-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .dialog-close:hover {
+      color: var(--paper);
+      background: var(--ink);
+    }
+
+    .dialog-close span {
+      position: absolute;
+      width: 14px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .dialog-close span:first-child {
+      transform: rotate(45deg);
+    }
+
+    .dialog-close span:last-child {
+      transform: rotate(-45deg);
+    }
+
+    .dialog-inner .kicker {
+      margin-bottom: 0.8rem;
+    }
+
+    .dialog-inner h2 {
+      max-width: 12ch;
+      margin-bottom: 1rem;
+      padding-right: 2.5rem;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      letter-spacing: -0.055em;
+      line-height: 1;
+    }
+
+    .dialog-lead {
+      max-width: 55ch;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .dialog-facts {
+      display: grid;
+      grid-template-columns: 0.6fr 1.7fr 1fr;
+      gap: 1rem;
+      margin: 1.7rem 0 1.5rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dialog-facts div {
+      min-width: 0;
+    }
+
+    .dialog-facts dt {
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 0.56rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .dialog-facts dd {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .dialog-body p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.68;
+    }
+
+    .dialog-body p + p {
+      margin-top: 0.85rem;
+    }
+
+    .dialog-outcome {
+      margin-top: 1.2rem;
+      padding: 1rem 1.1rem;
+      border-left: 2px solid var(--brand);
+      color: var(--ink-2);
+      background: var(--brand-tint);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .dialog-outcome::before {
+      content: "Sonuç";
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--brand-deep);
+      font-family: var(--font-display);
+      font-size: 0.54rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dialog-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.6rem;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid var(--line-strong);
+      font-family: var(--font-display);
+      font-size: 0.76rem;
+      text-decoration: none;
+    }
+
+    .dialog-cta:hover {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .dialog-hint {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.67rem;
+    }
+
+    @keyframes dialog-in {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-dialog[open] .dialog-inner {
+      animation: dialog-in 0.28s var(--ease) both;
+    }
+
+    body.nav-open,
+    body.dialog-open {
+      overflow: hidden;
+    }
+
+    .js [data-hero],
+    .js [data-reveal],
+    .js [data-stagger] > * {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-bottom {
+        grid-template-columns: minmax(0, 1.1fr) minmax(10rem, 0.7fr);
+      }
+
+      .availability {
+        grid-column: 1 / -1;
+        max-width: none;
+        padding: 1rem 0 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .about-grid {
+        gap: clamp(2.5rem, 5vw, 4rem);
+      }
+    }
+
+    @media (max-width: 900px) {
+      html {
+        scroll-padding-top: 82px;
+      }
+
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .site-nav {
+        position: fixed;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 7.2rem var(--gutter) 2rem;
+        background: var(--paper);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition: opacity 0.3s ease, transform 0.35s var(--ease), visibility 0.3s;
+      }
+
+      .site-nav.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-link {
+        width: 100%;
+        padding: 0.65rem 0;
+        border-bottom: 1px solid var(--line);
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 8vw, 3.2rem);
+        letter-spacing: -0.05em;
+        line-height: 1.2;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.3s ease, transform 0.35s var(--ease);
+      }
+
+      .nav-link::after {
+        display: none;
+      }
+
+      .nav-cta {
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1.4rem;
+        padding: 1rem 1.1rem;
+        font-size: 0.83rem;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.3s ease, transform 0.35s var(--ease), color 0.25s ease, background 0.25s ease;
+      }
+
+      .site-nav.is-open .nav-link,
+      .site-nav.is-open .nav-cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .site-nav.is-open .nav-link:nth-child(1) {
+        transition-delay: 0.04s;
+      }
+
+      .site-nav.is-open .nav-link:nth-child(2) {
+        transition-delay: 0.08s;
+      }
+
+      .site-nav.is-open .nav-link:nth-child(3) {
+        transition-delay: 0.12s;
+      }
+
+      .site-nav.is-open .nav-link:nth-child(4) {
+        transition-delay: 0.16s;
+      }
+
+      .site-nav.is-open .nav-link:nth-child(5) {
+        transition-delay: 0.2s;
+      }
+
+      .site-nav.is-open .nav-cta {
+        transition-delay: 0.24s;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+      }
+
+      .section-note {
+        max-width: 52ch;
+        padding-bottom: 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-poster {
+        position: static;
+        aspect-ratio: 16 / 10;
+        max-height: 480px;
+      }
+
+      .poster-initials {
+        font-size: clamp(6rem, 19vw, 10rem);
+      }
+
+      .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .note:nth-child(2) {
+        margin-top: 0;
+      }
+
+      .note:nth-child(3) {
+        grid-column: 2;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .contact h2 {
+        max-width: 100%;
+      }
+
+      .footer-top {
+        flex-wrap: wrap;
+      }
+
+      .footer-nav {
+        order: 3;
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-coords {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: clamp(2.55rem, 11.5vw, 4.9rem);
+        letter-spacing: -0.06em;
+      }
+
+      .hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem 1.6rem;
+      }
+
+      .availability {
+        border-top: 1px solid var(--line);
+      }
+
+      .work-trigger {
+        grid-template-columns: 28px minmax(0, 1fr);
+      }
+
+      .work-arrow {
+        width: 32px;
+        height: 32px;
+      }
+
+      .services .section-head h2 {
+        max-width: 14ch;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .service-card:nth-child(odd),
+      .service-card:nth-child(even) {
+        padding-right: 0;
+        padding-left: 0;
+        border-right: 0;
+      }
+
+      .contact-foot {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .contact-foot span:nth-child(2),
+      .contact-foot span:last-child {
+        text-align: left;
+      }
+
+      .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      .footer-bottom span:nth-child(2),
+      .footer-bottom span:last-child {
+        text-align: left;
+      }
+
+      .fiction-note {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+
+      .dialog-facts {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand-role {
+        display: none;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .hero-top {
+        margin-bottom: 2.2rem;
+      }
+
+      .hero-top .kicker {
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+      }
+
+      .hero-title {
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-footer {
+        font-size: 0.58rem;
+      }
+
+      .work-meta {
+        gap: 0.2rem 0.8rem;
+      }
+
+      .work-title-row {
+        align-items: flex-start;
+      }
+
+      .about-poster {
+        aspect-ratio: 1 / 1;
+        max-height: none;
+      }
+
+      .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .note:nth-child(3) {
+        grid-column: auto;
+      }
+
+      .contact-head {
+        display: block;
+      }
+
+      .contact-local {
+        display: block;
+        margin-top: 0.65rem;
+      }
+
+      .contact h2 {
+        font-size: clamp(2.8rem, 13.5vw, 5rem);
+      }
+
+      .email-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .email-link {
+        font-size: 1.07rem;
+      }
+
+      .footer-top {
+        gap: 1.5rem;
+      }
+
+      .back-top {
+        margin-left: auto;
+      }
+
+      .dialog-inner {
+        padding: 3.2rem 1.25rem 1.5rem;
+      }
+
+      .dialog-close {
+        top: 0.8rem;
+        right: 0.8rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .js [data-hero],
+      .js [data-reveal],
+      .js [data-stagger] > * {
+        opacity: 1;
+        transform: none;
+      }
+
+      .js .scribble path {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="İlkim Önercan, sayfa başı">
+        <span class="brand-mark" aria-hidden="true">İÖ</span>
+        <span class="brand-text">
+          <span class="brand-name">İlkim Önercan</span>
+          <span class="brand-role">Tasarımcı & geliştirici</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span class="sr-only">Menü</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+        <a class="nav-link" href="#work">İşler</a>
+        <a class="nav-link" href="#about">Hakkımda</a>
+        <a class="nav-link" href="#services">Hizmetler</a>
+        <a class="nav-link" href="#notes">Defter</a>
+        <a class="nav-link" href="#contact">İletişim</a>
+        <a class="nav-cta" href="#contact">
+          <span>Birlikte çalışalım</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-top" data-hero>
+          <p class="kicker">Bağımsız tasarımcı & front-end geliştirici</p>
+          <p class="hero-coords">41.0082° K · 28.9784° D <span class="slash">/</span> İST <span data-clock>--:--</span></p>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="line" data-hero>internetin</span>
+          <span class="line line--indent" data-hero>daha <span class="marked">sakin<svg class="scribble" id="heroScribble" viewBox="0 0 220 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 40 2, 70 17, 112 8 S 180 3, 216 10" pathLength="1" vector-effect="non-scaling-stroke"/></svg></span></span>
+          <span class="line" data-hero>kısmını tasarlıyorum.</span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="hero-lead" data-hero>Kültürel arşivler, bağımsız yayınlar ve insanı yormayan arayüzler. İstanbul'dan, ekranınızın öbür ucuna.</p>
+
+          <div class="hero-actions" data-hero>
+            <a class="btn" href="#work">
+              <span>İşlere bak</span>
+              <span class="btn-arrow" aria-hidden="true">↓</span>
+            </a>
+            <a class="quiet-link" href="#contact">Merhaba de <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <aside class="availability" data-hero aria-label="Müsaitlik durumu">
+            <p class="kicker"><span class="status-dot" aria-hidden="true"></span>Şu sıralar</p>
+            <p>Kadıköy'de bir müzenin ses arşivini tarayıcıya taşıyorum. Yeni projelere <strong>Kasım 2026</strong>'dan itibaren iki gün ayırabiliyorum.</p>
+          </aside>
+        </div>
+
+        <div class="hero-footer" data-hero>
+          <a class="scroll-cue" href="#work" aria-label="Seçili işlere kaydır">
+            <span class="scroll-line" aria-hidden="true"></span>
+            <span>Aşağı kaydır</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="hero-index">01 <span>/</span> 06</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">02 / Seçili işler</p>
+          <h2 id="work-title">İşe yarayan<br>dört şey.</h2>
+          <p class="section-note">Yakın zamandan dört proje. Başlıklara dokunun; ne yaptığımı ve neden öyle yaptığımı anlatayım.</p>
+        </div>
+
+        <div class="work-list" data-stagger>
+          <article class="work-row">
+            <button class="work-trigger" type="button" data-project="sesli-hafiza" aria-haspopup="dialog">
+              <span class="work-index" aria-hidden="true">01</span>
+              <span class="work-body">
+                <span class="work-title-row">
+                  <span class="work-title">Sesli Hafıza</span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </span>
+                <span class="work-desc">Kadıköy'ün sözlü tarihini sokak sokak gezilebilen bir ses arşivine dönüştüren açık platform.</span>
+                <span class="work-meta">
+                  <span>Kültür Rotası</span>
+                  <span>2025</span>
+                  <span>Araştırma · Arayüz · Front-end</span>
+                </span>
+              </span>
+            </button>
+          </article>
+
+          <article class="work-row">
+            <button class="work-trigger" type="button" data-project="murekkep" aria-haspopup="dialog">
+              <span class="work-index" aria-hidden="true">02</span>
+              <span class="work-body">
+                <span class="work-title-row">
+                  <span class="work-title">Mürekkep</span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </span>
+                <span class="work-desc">On iki bağımsız dergiyi aynı rafta buluşturan, okumayı öne alan sakin bir dijital kütüphane.</span>
+                <span class="work-meta">
+                  <span>Mürekkep Kolektif</span>
+                  <span>2024</span>
+                  <span>Ürün tasarımı · Tasarım sistemi · Front-end</span>
+                </span>
+              </span>
+            </button>
+          </article>
+
+          <article class="work-row">
+            <button class="work-trigger" type="button" data-project="pazar-gunu" aria-haspopup="dialog">
+              <span class="work-index" aria-hidden="true">03</span>
+              <span class="work-body">
+                <span class="work-title-row">
+                  <span class="work-title">Pazar Günü</span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </span>
+                <span class="work-desc">İstanbul'un semt pazarlarını tek bir haftalık takvimde toplayan küçük ama işlek bir rehber.</span>
+                <span class="work-meta">
+                  <span>Bağımsız proje</span>
+                  <span>2024</span>
+                  <span>İçerik tasarımı · Arayüz · Front-end</span>
+                </span>
+              </span>
+            </button>
+          </article>
+
+          <article class="work-row">
+            <button class="work-trigger" type="button" data-project="rota-34" aria-haspopup="dialog">
+              <span class="work-index" aria-hidden="true">04</span>
+              <span class="work-body">
+                <span class="work-title-row">
+                  <span class="work-title">Rota 34</span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </span>
+                <span class="work-desc">İstanbul'da gece otobüslerinde geçen üç yılın fotoğraflarını, duraklarını ve notlarını bir araya getiren harita.</span>
+                <span class="work-meta">
+                  <span>Kişisel proje</span>
+                  <span>2023</span>
+                  <span>Veri görselleştirme · Front-end</span>
+                </span>
+              </span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-poster" data-reveal aria-hidden="true">
+            <div class="poster-top">
+              <span>İlkim Önercan</span>
+              <span>İST / 41.0082° K</span>
+            </div>
+            <div class="poster-center">
+              <span class="poster-initials">İÖ</span>
+              <span class="poster-line">Tasarım · Kod · Arşiv</span>
+            </div>
+            <div class="poster-foot">
+              <span>Bağımsız, tek kişilik,<br>dikkatli.</span>
+              <span>2016—2026<br>İstanbul</span>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <p class="kicker" data-reveal>03 / Hakkımda</p>
+            <h2 id="about-title" data-reveal>Tasarımla kod arasında değil, tam orada çalışıyorum.</h2>
+
+            <div class="about-text" data-reveal>
+              <p>İlkim Önercan, İstanbul'da yaşayan bağımsız bir tasarımcı ve front-end geliştirici. Kültür kurumları, bağımsız yayınlar ve küçük ekiplerle çalışıyor; işin araştırma, arayüz ve kod tarafını aynı masada yürütüyor.</p>
+              <p>Endüstriyel tasarım okudu. Kodu ilk kez bir sergi kataloğunu tarayıcıya sığdırmaya çalışırken öğrendi. O günden beri işin iki tarafında da aynı soruyu soruyor: <strong>Bu, insanın işini kolaylaştırıyor mu?</strong></p>
+              <p>Güzel görünmesini önemsiyor, ama önce iyi çalışmasını istiyor. Türkçe ve İngilizce çalışıyor.</p>
+            </div>
+
+            <div class="about-links" data-reveal>
+              <a class="social-inline" href="https://github.com/runtime-stranger" target="_blank" rel="noreferrer">GitHub'da kodlarım <span aria-hidden="true">↗</span></a>
+              <a class="social-inline" href="https://www.linkedin.com/in/ilkim-%C3%B6nercan-86a50b324" target="_blank" rel="noreferrer">LinkedIn'de özgeçmiş <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <aside class="now" data-reveal>
+              <div class="now-head">
+                <span>Şu sıralar</span>
+                <span>Ekim 2026</span>
+              </div>
+              <ul class="now-list">
+                <li><span>01</span><div>Kadıköy'de bir müze arşivini dijitalde yeniden kuruyorum.</div></li>
+                <li><span>02</span><div>Masamda: Oktay Rifat'ın <em>Perçemli Sokak</em>'ı ve soğumuş bir kahve.</div></li>
+                <li><span>03</span><div>Öğrenirken: CSS container queries ve eski Türkçe tipografi.</div></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">04 / Ne yapıyorum</p>
+          <h2 id="services-title">Fikirden yayına,<br>aynı masada.</h2>
+          <p class="section-note">Bazen tek başıma, bazen bir editör, fotoğrafçı ya da geliştiriciyle. İhtiyaca göre kurulan küçük ekiplerle çalışıyorum.</p>
+        </div>
+
+        <div class="service-grid" data-stagger>
+          <article class="service-card">
+            <span class="service-num">01</span>
+            <h3>Dijital arşivler</h3>
+            <p>Dağınık klasörleri, eski PDF'leri ve iyi niyetli tabloları; aranabilir, paylaşılabilir ve yıllar sonra da açılabilir bir yapıya dönüştürüyorum.</p>
+            <p class="service-tags">Araştırma · Bilgi mimarisi · Arayüz</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">02</span>
+            <h3>Editoryal siteler</h3>
+            <p>Dergi, katalog ve raporlar için okumayı öne alan tasarımlar. Hızlı, erişilebilir ve editörün korkmadan güncelleyebileceği türden.</p>
+            <p class="service-tags">Tasarım yönü · Tipografi · Front-end</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">03</span>
+            <h3>Tasarım sistemleri</h3>
+            <p>Büyüyen ekipler için ortak bir dil: renk, tipografi, bileşenler ve neden öyle olduklarını anlatan kısa notlar.</p>
+            <p class="service-tags">Sistem tasarımı · Dokümantasyon · Kod</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">04</span>
+            <h3>Küçük araçlar</h3>
+            <p>Bir sorunu tek seferde çözen prototipler. Bazen bir hesaplayıcı, bazen bir harita, bazen sadece daha iyi bir form.</p>
+            <p class="service-tags">Prototip · Veri görselleştirme · Front-end</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="notes" aria-labelledby="notes-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">05 / Defter</p>
+          <h2 id="notes-title">Aklımda<br>kalanlar.</h2>
+          <p class="section-note">Her şeyi buraya yazmıyorum. Yalnızca bir süre sonra hâlâ doğru bulduklarımı.</p>
+        </div>
+
+        <div class="notes-grid" data-stagger>
+          <article class="note">
+            <div class="note-top">
+              <time datetime="2026-09-12">12 Eylül 2026</time>
+              <span>3 dk</span>
+            </div>
+            <h3>Arşiv, tamamlanmış bir şey değil.</h3>
+            <p>Bir ses kaydını dinlerken fark ettim: arşiv geçmişi saklamıyor, bugünün hangi geçmişi seçtiğini gösteriyor. Bu yüzden iyi bir arşiv arayüzü kapalı bir sandık değil, açık bir pencere olmalı.</p>
+          </article>
+
+          <article class="note">
+            <div class="note-top">
+              <time datetime="2026-08-03">03 Ağustos 2026</time>
+              <span>2 dk</span>
+            </div>
+            <h3>İyi form, fark edilmeyen formdur.</h3>
+            <p>Pazar Günü'nde üretici kayıt formunu üç adımdan tek adıma indirdik. Kimse “ne kadar zarif” demedi. Ama güncelleme süresi yarıya indi. Bazen tasarımın en iyi kanıtı, hakkında konuşulmaması.</p>
+          </article>
+
+          <article class="note">
+            <div class="note-top">
+              <time datetime="2026-06-17">17 Haziran 2026</time>
+              <span>4 dk</span>
+            </div>
+            <h3>Gece otobüsünde tipografi.</h3>
+            <p>Rota 34 üzerinde çalışırken her durak adını tabeladaki hâliyle bıraktım. Düzeltsem daha okunur olurdu; dokunmasam daha doğru. Bazı şeylerde doğruluk, okunurluktan önce geliyor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-head" data-reveal>
+          <p class="kicker">06 / İletişim</p>
+          <p class="contact-local">İstanbul'da <span data-clock>--:--</span></p>
+        </div>
+
+        <h2 id="contact-title" data-reveal>Bir kahve<br><span>içimi</span> mesafe.</h2>
+
+        <div class="contact-grid">
+          <div class="contact-copy" data-reveal>
+            <p>Yeni projeler, ortaklıklar ve selamlar için yazın. İstanbul'daysanız gerçekten kahve de olur.</p>
+            <div class="email-row">
+              <a class="email-link" href="mailto:merhaba@ilkimonercan.com">merhaba@ilkimonercan.com</a>
+              <button class="copy-btn" type="button" data-copy-email="merhaba@ilkimonercan.com">E-postayı kopyala</button>
+            </div>
+          </div>
+
+          <div class="contact-links" data-stagger>
+            <a class="contact-link" href="https://github.com/runtime-stranger" target="_blank" rel="noreferrer">
+              <span class="contact-link-text">
+                <span>GitHub</span>
+                <strong>runtime-stranger</strong>
+              </span>
+              <span class="contact-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/ilkim-%C3%B6nercan-86a50b324" target="_blank" rel="noreferrer">
+              <span class="contact-link-text">
+                <span>LinkedIn</span>
+                <strong>İlkim Önercan</strong>
+              </span>
+              <span class="contact-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <p class="contact-availability"><span class="status-dot" aria-hidden="true"></span><span>Kasım 2026'dan itibaren yeni projelere iki gün/hafta ayırıyorum.</span></p>
+          </div>
+        </div>
+
+        <div class="contact-foot" data-reveal>
+          <span>Genelde 1–2 iş günü içinde dönüyorum.</span>
+          <span>Bu sayfa elle kodlandı.</span>
+          <span>İstanbul · GMT+3</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-name">İlkim Önercan <span>Tasarımcı & front-end geliştirici</span></p>
+        <nav class="footer-nav" aria-label="Alt menü">
+          <a href="#work">İşler</a>
+          <a href="#about">Hakkımda</a>
+          <a href="#services">Hizmetler</a>
+          <a href="#notes">Defter</a>
+          <a href="#contact">İletişim</a>
+          <a href="https://github.com/runtime-stranger" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ilkim-%C3%B6nercan-86a50b324" target="_blank" rel="noreferrer">LinkedIn</a>
+        </nav>
+        <a class="back-top" href="#top">Yukarı çık <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 İlkim Önercan</span>
+        <span>İlkim Önercan kurgusal bir karakterdir; bu site bir tasarım konseptidir.</span>
+        <span>İstanbul <span data-clock>--:--</span></span>
+      </div>
+      <div class="fiction-note" role="note">
+        <span class="fiction-note-label">Kurgu notu</span>
+        <p>Bu sitedeki İlkim Önercan, tüm projeler, müşteriler, sonuçlar, tarihler, deneyimler ve diğer bilgiler tamamen kurgusaldır. Gerçek kişi, kurum veya olayları temsil etmez; sayfadaki bilgiler gerçeği yansıtmamaktadır. Bu site yalnızca bir tasarım konseptidir.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" aria-label="Proje penceresini kapat">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <p class="kicker" id="dialog-kicker">Dosya 01</p>
+      <h2 id="dialog-title"></h2>
+      <p class="dialog-lead" id="dialog-lead"></p>
+      <div class="dialog-facts">
+        <div>
+          <dt>Yıl</dt>
+          <dd id="dialog-year"></dd>
+        </div>
+        <div>
+          <dt>Rol</dt>
+          <dd id="dialog-role"></dd>
+        </div>
+        <div>
+          <dt>Birlikte</dt>
+          <dd id="dialog-client"></dd>
+        </div>
+      </div>
+      <div class="dialog-body" id="dialog-body"></div>
+      <p class="dialog-outcome" id="dialog-outcome"></p>
+      <a class="dialog-cta" id="dialog-cta" href="mailto:merhaba@ilkimonercan.com">Bu proje hakkında konuşalım <span aria-hidden="true">↗</span></a>
+      <p class="dialog-hint">Kapatmak için ESC tuşuna da basabilirsiniz.</p>
+    </div>
+  </dialog>
+
+  <span class="sr-only" id="copy-status" role="status" aria-live="polite"></span>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var body = document.body;
+      var root = document.documentElement;
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function updateClock() {
+        var time = "--:--";
+        try {
+          time = new Intl.DateTimeFormat("tr-TR", {
+            timeZone: "Europe/Istanbul",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+          }).format(new Date());
+        } catch (error) {
+          var now = new Date();
+          time = String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0");
+        }
+        document.querySelectorAll("[data-clock]").forEach(function (node) {
+          node.textContent = time;
+        });
+      }
+
+      updateClock();
+      window.setInterval(updateClock, 30000);
+
+      var menuButton = document.querySelector(".menu-toggle");
+      var nav = document.getElementById("site-nav");
+      var mobileQuery = window.matchMedia("(max-width: 900px)");
+
+      function setMenu(open, returnFocus) {
+        if (!menuButton || !nav) return;
+        menuButton.classList.toggle("is-open", open);
+        menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+        menuButton.setAttribute("aria-label", open ? "Menüyü kapat" : "Menüyü aç");
+        nav.classList.toggle("is-open", open);
+        body.classList.toggle("nav-open", open);
+
+        if (open) {
+          var firstLink = nav.querySelector("a");
+          if (firstLink) firstLink.focus({ preventScroll: true });
+        } else if (returnFocus) {
+          menuButton.focus({ preventScroll: true });
+        }
+      }
+
+      if (menuButton && nav) {
+        menuButton.addEventListener("click", function () {
+          setMenu(!nav.classList.contains("is-open"), false);
+        });
+
+        nav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            setMenu(false, false);
+          });
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && nav.classList.contains("is-open")) {
+            setMenu(false, true);
+          }
+        });
+
+        nav.addEventListener("keydown", function (event) {
+          if (event.key !== "Tab" || !nav.classList.contains("is-open")) return;
+          var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+          if (!links.length) return;
+          var first = links[0];
+          var last = links[links.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        });
+
+        var handleBreakpoint = function (event) {
+          if (!event.matches && nav.classList.contains("is-open")) {
+            setMenu(false, false);
+          }
+        };
+
+        if (mobileQuery.addEventListener) {
+          mobileQuery.addEventListener("change", handleBreakpoint);
+        } else {
+          mobileQuery.addListener(handleBreakpoint);
+        }
+      }
+
+      var projects = {
+        "sesli-hafiza": {
+          index: "01",
+          title: "Sesli Hafıza",
+          lead: "Kadıköy'ün sözlü tarihini sokak sokak gezilebilen bir ses arşivine dönüştürdük.",
+          year: "2025",
+          role: "Araştırma, bilgi mimarisi, arayüz, front-end",
+          client: "Kültür Rotası",
+          body: [
+            "Kırk iki kişinin anlattığı hikâyeleri bir haritaya yerleştirdik. Kayıtları dinlerken metni takip edebiliyor, aynı sokaktan geçen başka seslere atlayabiliyorsunuz.",
+            "En zor kısım, doksan dakikalık kayıtları dinlenebilir parçalara ayırmaktı. Her parçayı bir yer adı, bir zaman ve bir duyguyla etiketledik. Arama böylece yalnızca “ne aradığını biliyorsan” değil, “ne bulmak istediğini henüz bilmiyorsan” da çalıştı."
+          ],
+          outcome: "İlk üç ayda 6.200 dinleme. On sekiz okul arşivi ders materyali olarak kullandı."
+        },
+        "murekkep": {
+          index: "02",
+          title: "Mürekkep",
+          lead: "On iki bağımsız dergiyi aynı rafta buluşturan, okumayı öne alan bir dijital kütüphane.",
+          year: "2024",
+          role: "Ürün tasarımı, tasarım sistemi, front-end",
+          client: "Mürekkep Kolektif",
+          body: [
+            "Dergilerin arşivleri farklı platformlarda, farklı okuma deneyimleriyle dağılmıştı. Ortak bir raf kurmak için önce yayıncılarla tek tek konuştuk, sonra okuma ritmini tasarladık: kapak, içindekiler, bir uzun okuma ve arşive dönüş.",
+            "Editörlerin yeni sayı eklerken kod bilmesini istemedik. Hazırladığımız basit şablon, tek bir CSS sınıfıyla yeni içerik üretmelerine izin veriyor. Sistemin en sevdiğim yeri, görünmeyen yerlerde çalışması."
+          ],
+          outcome: "İlk sezonda 1.800 abone ve 12 yayın. Ortalama okuma süresi 9 dakika."
+        },
+        "pazar-gunu": {
+          index: "03",
+          title: "Pazar Günü",
+          lead: "İstanbul'un semt pazarlarını tek bir haftalık takvimde toplayan küçük bir rehber.",
+          year: "2024",
+          role: "İçerik tasarımı, arayüz, front-end",
+          client: "Bağımsız proje",
+          body: [
+            "Hangi pazarda ne var, hangi üretici hangi gün geliyor? Seksen tezgâhın bilgisini haftalık bir takvime dönüştürdük. Sayfa, pazar sabahı telefon elde, tek elle açılacak kadar hızlı.",
+            "Veri girişi için hazır bir panel yoktu. Esnafın gönderdiği sesli notları dinleyip takvimi elle güncelledim. İlk sürümden sonra formu sadeleştirince güncelleme süresi yarıya indi. Kimse bunu fark etmedi; tam da istediğimiz gibi."
+          ],
+          outcome: "Haftada ortalama 2.400 ziyaret ve 80 üretici profili. İlk yıl için reklam almadık."
+        },
+        "rota-34": {
+          index: "04",
+          title: "Rota 34",
+          lead: "İstanbul'da gece otobüslerinde geçen üç yılın kişisel haritası.",
+          year: "2023",
+          role: "Kişisel proje, veri görselleştirme, front-end",
+          client: "Kendi başıma",
+          body: [
+            "Gece hatlarında çektiğim fotoğrafları, durak isimlerini ve küçük notları bir araya getirdim. Bir ulaşım aracı değil; şehrin gece ritmine bakmak için bir bahane.",
+            "Harita, bir yolculuğun en kısa hâlini değil en uzun hâlini gösteriyor. Güzergâhlar gece boyunca aldıkları renge göre değişiyor; sabah ilk sefere kadar geçen süre bir çizgiye dönüşüyor."
+          ],
+          outcome: "147 gece hattı ve 600'den fazla durak. Hâlâ tamamlanmadı, muhtemelen tamamlanmayacak."
+        }
+      };
+
+      var dialog = document.getElementById("project-dialog");
+      var dialogTitle = document.getElementById("dialog-title");
+      var dialogKicker = document.getElementById("dialog-kicker");
+      var dialogLead = document.getElementById("dialog-lead");
+      var dialogYear = document.getElementById("dialog-year");
+      var dialogRole = document.getElementById("dialog-role");
+      var dialogClient = document.getElementById("dialog-client");
+      var dialogBody = document.getElementById("dialog-body");
+      var dialogOutcome = document.getElementById("dialog-outcome");
+      var dialogCta = document.getElementById("dialog-cta");
+      var dialogClose = dialog ? dialog.querySelector(".dialog-close") : null;
+      var lastProjectTrigger = null;
+
+      function openProject(key, trigger) {
+        var project = projects[key];
+        if (!project || !dialog || typeof dialog.showModal !== "function") return;
+
+        lastProjectTrigger = trigger;
+        dialogKicker.textContent = "Dosya " + project.index;
+        dialogTitle.textContent = project.title;
+        dialogLead.textContent = project.lead;
+        dialogYear.textContent = project.year;
+        dialogRole.textContent = project.role;
+        dialogClient.textContent = project.client;
+        dialogOutcome.textContent = project.outcome;
+
+        while (dialogBody.firstChild) {
+          dialogBody.removeChild(dialogBody.firstChild);
+        }
+
+        project.body.forEach(function (paragraph) {
+          var node = document.createElement("p");
+          node.textContent = paragraph;
+          dialogBody.appendChild(node);
+        });
+
+        dialogCta.href = "mailto:merhaba@ilkimonercan.com?subject=" + encodeURIComponent(project.title + " hakkında");
+        dialog.showModal();
+        body.classList.add("dialog-open");
+        dialogClose.focus({ preventScroll: true });
+      }
+
+      if (dialog) {
+        document.querySelectorAll("[data-project]").forEach(function (trigger) {
+          trigger.addEventListener("click", function () {
+            openProject(trigger.getAttribute("data-project"), trigger);
+          });
+        });
+
+        if (dialogClose) {
+          dialogClose.addEventListener("click", function () {
+            dialog.close();
+          });
+        }
+
+        dialogCta.addEventListener("click", function () {
+          dialog.close();
+        });
+
+        dialog.addEventListener("click", function (event) {
+          if (event.target === dialog) {
+            dialog.close();
+          }
+        });
+
+        dialog.addEventListener("close", function () {
+          body.classList.remove("dialog-open");
+          if (lastProjectTrigger) {
+            lastProjectTrigger.focus({ preventScroll: true });
+          }
+        });
+      }
+
+      var copyButton = document.querySelector("[data-copy-email]");
+      var copyStatus = document.getElementById("copy-status");
+      var copyResetTimer = null;
+
+      function fallbackCopy(text) {
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.top = "-1000px";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        var copied = false;
+        try {
+          copied = document.execCommand("copy");
+        } catch (error) {
+          copied = false;
+        }
+        document.body.removeChild(area);
+        return copied;
+      }
+
+      function showCopyResult(success) {
+        if (!copyButton) return;
+        window.clearTimeout(copyResetTimer);
+        copyButton.textContent = success ? "Kopyalandı" : "Tekrar dene";
+        copyButton.classList.toggle("is-copied", success);
+        if (copyStatus) {
+          copyStatus.textContent = success ? "E-posta adresi kopyalandı." : "E-posta adresi kopyalanamadı.";
+        }
+        copyResetTimer = window.setTimeout(function () {
+          copyButton.textContent = "E-postayı kopyala";
+          copyButton.classList.remove("is-copied");
+        }, 2200);
+      }
+
+      if (copyButton) {
+        copyButton.addEventListener("click", function () {
+          var value = copyButton.getAttribute("data-copy-email");
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(value).then(function () {
+              showCopyResult(true);
+            }).catch(function () {
+              showCopyResult(fallbackCopy(value));
+            });
+          } else {
+            showCopyResult(fallbackCopy(value));
+          }
+        });
+      }
+
+      if (!window.gsap || !window.ScrollTrigger || reduceMotion) {
+        root.classList.remove("js");
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      var heroTimeline = gsap.timeline({
+        defaults: { duration: 0.75, ease: "power2.out" }
+      });
+
+      heroTimeline.to("[data-hero]", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.085
+      });
+
+      if (document.getElementById("heroScribble")) {
+        gsap.to("#heroScribble path", {
+          strokeDashoffset: 0,
+          duration: 0.8,
+          ease: "power2.inOut",
+          delay: 0.9
+        });
+      }
+
+      document.querySelectorAll("[data-reveal]").forEach(function (element) {
+        gsap.to(element, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 88%",
+            once: true
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-stagger]").forEach(function (group) {
+        var items = Array.prototype.slice.call(group.children);
+        if (!items.length) return;
+
+        gsap.to(items, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: group,
+            start: "top 86%",
+            once: true
+          }
+        });
+      });
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          ScrollTrigger.refresh();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
